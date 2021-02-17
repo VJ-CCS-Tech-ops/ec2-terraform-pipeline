@@ -5,7 +5,7 @@ provider "aws" {
 
 resource "aws_key_pair" "ubuntu" {
   key_name   = "ubuntu"
-  public_key = file(${PUBLIC_KEY})
+  public_key = file(PUBLIC_KEY)
 }
 
 resource "aws_security_group" "ubuntu" {
