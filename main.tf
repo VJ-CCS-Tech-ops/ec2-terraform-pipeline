@@ -1,11 +1,7 @@
-provider "aws" {
-  profile = "default"
-  region  = "us-west-1"
-}
 
 resource "aws_key_pair" "ubuntu" {
   key_name   = "ubuntu"
-  public_key = file(PUBLIC_KEY)
+  public_key = file(terraform_ec2_key.pub)
 }
 
 resource "aws_security_group" "ubuntu" {
